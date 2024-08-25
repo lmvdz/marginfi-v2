@@ -27,6 +27,7 @@ pyth-sdk-solana = { workspace = true }
 pyth-solana-receiver-sdk = { workspace = true }
 switchboard-solana = { workspace = true }
 borsh = { workspace = true }
+switchboard-on-demand = "0.1.14"
 
 marginfi = { path = "../../../programs/marginfi", version = "0.1.0", features = [
     "client",
