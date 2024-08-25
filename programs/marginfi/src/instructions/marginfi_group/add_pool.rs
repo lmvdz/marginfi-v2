@@ -107,6 +107,7 @@ pub struct LendingPoolAddBank<'info> {
         payer = fee_payer,
         token::mint = bank_mint,
         token::authority = liquidity_vault_authority,
+        token::token_program = token_program,
         seeds = [
             LIQUIDITY_VAULT_SEED.as_bytes(),
             bank.key().as_ref(),
@@ -130,6 +131,7 @@ pub struct LendingPoolAddBank<'info> {
         payer = fee_payer,
         token::mint = bank_mint,
         token::authority = insurance_vault_authority,
+        token::token_program = token_program,
         seeds = [
             INSURANCE_VAULT_SEED.as_bytes(),
             bank.key().as_ref(),
@@ -153,6 +155,7 @@ pub struct LendingPoolAddBank<'info> {
         payer = fee_payer,
         token::mint = bank_mint,
         token::authority = fee_vault_authority,
+        token::token_program = token_program,
         seeds = [
             FEE_VAULT_SEED.as_bytes(),
             bank.key().as_ref(),
@@ -273,6 +276,7 @@ pub struct LendingPoolAddBankWithSeed<'info> {
         payer = fee_payer,
         token::mint = bank_mint,
         token::authority = liquidity_vault_authority,
+        token::token_program = token_program,
         seeds = [
             LIQUIDITY_VAULT_SEED.as_bytes(),
             bank.key().as_ref(),
@@ -296,6 +300,7 @@ pub struct LendingPoolAddBankWithSeed<'info> {
         payer = fee_payer,
         token::mint = bank_mint,
         token::authority = insurance_vault_authority,
+        token::token_program = token_program,
         seeds = [
             INSURANCE_VAULT_SEED.as_bytes(),
             bank.key().as_ref(),
@@ -319,6 +324,7 @@ pub struct LendingPoolAddBankWithSeed<'info> {
         payer = fee_payer,
         token::mint = bank_mint,
         token::authority = fee_vault_authority,
+        token::token_program = token_program,
         seeds = [
             FEE_VAULT_SEED.as_bytes(),
             bank.key().as_ref(),
