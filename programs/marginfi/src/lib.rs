@@ -52,9 +52,39 @@ pub mod marginfi {
     pub fn lending_pool_add_bank_with_seed(
         ctx: Context<LendingPoolAddBankWithSeed>,
         bank_config: BankConfigCompact,
-        bank_seed: u64,
+        bank_seed: u64
     ) -> MarginfiResult {
-        marginfi_group::lending_pool_add_bank_with_seed(ctx, bank_config.into(), bank_seed)
+        marginfi_group::lending_pool_add_bank_with_seed(
+            ctx, 
+            bank_config.into(), 
+            bank_seed
+        )
+    }
+
+    /// A copy of lending_pool_add_bank_with_seed with explicit bumps
+    /// to circumvent a CPI issue with bumps not being relayed correctly?
+    pub fn lending_pool_add_bank_with_seed_and_bump(
+        ctx: Context<LendingPoolAddBankWithSeedAndBump>,
+        bank_config: BankConfigCompact,
+        bank_seed: u64,
+        liquidity_vault_bump: u8,
+        liquidity_vault_auth_bump: u8,
+        insurance_vault_bump: u8,
+        insurance_vault_auth_bump: u8,
+        fee_vault_bump: u8,
+        fee_vault_auth_bump: u8
+    ) -> MarginfiResult {
+        marginfi_group::lending_pool_add_bank_with_seed_and_bump(
+            ctx, 
+            bank_config.into(), 
+            bank_seed,
+            liquidity_vault_bump,
+            liquidity_vault_auth_bump,
+            insurance_vault_bump,
+            insurance_vault_auth_bump,
+            fee_vault_bump,
+            fee_vault_auth_bump
+        )
     }
 
     pub fn lending_pool_configure_bank(
