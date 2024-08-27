@@ -511,27 +511,6 @@ pub fn lending_pool_add_bank_with_seed_and_bump(
 
     let mut bank = bank_loader.load_init()?;
 
-    // let liquidity_vault_bump = ctx.bumps.liquidity_vault;
-    // msg!("bank {}", bank_loader.key());
-    // let (lv, lvb) = Pubkey::find_program_address(&[b"liquidity_vault", bank_loader.key().as_ref()], &ID);
-
-    // msg!("lv {:?}, bump {:?}", lv, lvb); 
-
-    // let liquidity_vault_authority_bump = ctx.bumps.liquidity_vault_authority;
-    // let insurance_vault_bump = ctx.bumps.insurance_vault;
-    // let insurance_vault_authority_bump = ctx.bumps.insurance_vault_authority;
-    // let fee_vault_bump = ctx.bumps.fee_vault;
-    // let fee_vault_authority_bump = ctx.bumps.fee_vault_authority;
-
-    // msg!("liquidity_vault_bump: {}", liquidity_vault_bump);
-    // msg!("liquidity_vault_authority_bump: {}", liquidity_vault_auth_bump);
-    // msg!("liquidity_vault_authority_bump: {}", liquidity_vault_authority_bump);
-    // msg!("insurance_vault_bump: {}", insurance_vault_bump);
-    // msg!("insurance_vault_authority_bump: {}", insurance_vault_auth_bump);
-    // msg!("insurance_vault_authority_bump: {}", insurance_vault_authority_bump);
-    // msg!("fee_vault_bump: {}", fee_vault_bump);
-    // msg!("fee_vault_authority_bump: {}", fee_vault_auth_bump);
-    // msg!("fee_vault_authority_bump: {}", fee_vault_authority_bump);
 
     *bank = Bank::new(
         ctx.accounts.marginfi_group.key(),
